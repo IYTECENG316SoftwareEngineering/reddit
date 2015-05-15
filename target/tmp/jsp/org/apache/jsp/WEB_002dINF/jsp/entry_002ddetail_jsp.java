@@ -16,10 +16,20 @@ public final class entry_002ddetail_jsp extends org.apache.jasper.runtime.HttpJs
     _jspx_dependants.add("/WEB-INF/jsp/../layout/taglib.jsp");
   }
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_value_nobody;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_spring_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_spring_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -54,7 +64,9 @@ public final class entry_002ddetail_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\r\n");
       out.write("\t\r\n");
       out.write("<!-- \tuser registration form -->\r\n");
-      out.write("\t");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -64,9 +76,12 @@ public final class entry_002ddetail_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t<div class=\"text-left\">\r\n");
-      out.write("\t\t<h3>");
+      out.write("\t\t<h3 > <a href=\"");
+      if (_jspx_meth_spring_url_0(_jspx_page_context))
+        return;
+      out.write("\"> ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${entry.topic.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</h3>\r\n");
+      out.write(" </a></h3>\r\n");
       out.write("\t</div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -103,5 +118,31 @@ public final class entry_002ddetail_jsp extends org.apache.jasper.runtime.HttpJs
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_spring_url_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  spring:url
+    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_0 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
+    _jspx_th_spring_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_spring_url_0.setParent(null);
+    _jspx_th_spring_url_0.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("/topic/${entry.topic.id}.html", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_spring_url_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_spring_url_0 = _jspx_th_spring_url_0.doStartTag();
+      if (_jspx_th_spring_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_spring_url_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_spring_url_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_spring_url_0.doFinally();
+      _jspx_tagPool_spring_url_value_nobody.reuse(_jspx_th_spring_url_0);
+    }
+    return false;
   }
 }

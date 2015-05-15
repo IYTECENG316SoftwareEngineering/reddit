@@ -42,6 +42,10 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<%@ include file="../layout/taglib.jsp"%>
+
+
 <title><tiles:getAsString name="title"></tiles:getAsString></title>
 </head>
 <body>
@@ -59,59 +63,81 @@
 		<!-- from navbar example of bootstrap -->
 
 		<!-- Static navbar -->
-		<div class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="<spring:url value="/"/>">CoDict</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="${current == 'index' ?  'active' : '' }"><a
-							href='<spring:url value="/"/>'>Home</a></li>
-						<security:authorize access="hasRole('ROLE_ADMIN')">
-							<li class="${current == 'users' ?  'active' : '' }"><a
-								href="<spring:url value="/users.html"/>">Users</a></li>
-						</security:authorize>
-						<security:authorize access="isAuthenticated()">
-							<li class="${current == 'account' ?  'active' : '' }"><a
-								href="<spring:url value="/account.html"/>">My Account</a></li>
-						</security:authorize>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<security:authorize access="! isAuthenticated()">
-							<li class="${current == 'register' ?  'active' : '' }"><a
-								href="<spring:url value="/register.html"/>">Register</a></li>
-							<li class="${current == 'login' ?  'active' : '' }"><a
-								href="<spring:url value="/login.html"/>">Login</a></li>
-						</security:authorize>
-						<security:authorize access="isAuthenticated()">
-							<li><a href="<spring:url value="/logout"/>">Logout</a></li>
-						</security:authorize>
-					</ul>
 
-				</div>
-				<!--/.nav-collapse -->
+
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">CoDict</a>
 			</div>
-			<!--/.container-fluid -->
-		</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="${current == 'index' ?  'active' : '' }"><a
+						href='<spring:url value="/"/>'>Home</a></li>
+
+					<li class="dropdown"><a href="#" data-toggle="dropdown"
+						class="dropdown-toggle">Categories <b class="caret"></b></a>
+						<ul id="categoryList" class="dropdown-menu">
+
+						</ul></li>
+
+					<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li class="${current == 'users' ?  'active' : '' }"><a
+							href="<spring:url value="/users.html"/>">Users</a></li>
+						<li class="${current == 'topics' ?  'active' : '' }"><a
+							href="<spring:url value="/topics.html"/>">Topics</a></li>
+					</security:authorize>
+					<security:authorize access="isAuthenticated()">
+						<li class="${current == 'account' ?  'active' : '' }"><a
+							href="<spring:url value="/account.html"/>"><sec:authentication
+									property="name" /></a></li>
+					</security:authorize>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<security:authorize access="! isAuthenticated()">
+						<li class="${current == 'register' ?  'active' : '' }"><a
+							href="<spring:url value="/register.html"/>">Register</a></li>
+						<li class="${current == 'login' ?  'active' : '' }"><a
+							href="<spring:url value="/login.html"/>">Login</a></li>
+					</security:authorize>
+
+
+
+					<security:authorize access="isAuthenticated()">
+						<li><a href="<spring:url value="/logout"/>">Logout</a></li>
+					</security:authorize>
+				</ul>
+				<form class="navbar-form navbar-left" role="search"
+					action="<c:url value='/result.html'/>" method="GET">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search"
+							name=criteria>
+					</div>
+					<button type="submit" class="btn btn-default">
+						<i class="glyphicon glyphicon-search"></i>
+					</button>
+				</form>
+
+			</div>
+		</nav>
+
 		<tiles:insertAttribute name="left-bar" />
 
-
-
-
 		<tiles:insertAttribute name="body" />
-
 		<br> <br>
-
 		<center>
 			<tiles:insertAttribute name="footer" />
 		</center>
 	</div>
 </body>
+
+
 </html>

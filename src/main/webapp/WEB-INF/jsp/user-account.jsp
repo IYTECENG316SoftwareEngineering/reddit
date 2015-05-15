@@ -4,9 +4,43 @@
 <!-- include tag libs files -->
 <%@ include file="../layout/taglib.jsp"%>
 
+<style>
+<!--
+#div1 {
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+#div2 {
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+#div3 {
+	width: 100%;
+	height: 50%;
+	float: left;
+}
+
+#div4 {
+	width: 100%;
+	height: 50%;
+	float: left;
+}
+-->
+</style>
+
+
+<sec:authentication var="currentUser" property="principal" />
+
+
 <c:if test="${success eq true}">
 	<div class="alert alert-success">Added successfully!!</div>
 </c:if>
+
+
 <form:form commandName="topic" cssClass="form-horizontal topicForm">
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -68,33 +102,38 @@
 	<center>
 		<button class="btn btn-primary btn-lg" data-toggle="modal"
 			data-target="#myModal">New Topic</button>
+			<a href="<spring:url value='/account/inbox.html' />" class="btn btn-primary btn-lg">Inbox</a>
+			<a href="<spring:url value='/profile/edit.html' />" class="btn btn-primary btn-lg">Edit Infos</a>
+
 	</center>
 	<br>
-	<div class="text-left">
-		<h3>${user.name}s latest entries</h3>
+
+
+	<div id="div1">
+		<h3>Popular Entries</h3>
+
+		<c:forEach items="${mostVoted}" var="entry">
+			<a class="list-group-item" href="/entry/${entry.id}.html">
+				${entry.topic.title}</a>
+		</c:forEach>
 	</div>
 
-	<c:forEach items="${user.entries}" var="entry">
-		<div class="thumbnail">
-			<div class="caption-full">
-				<h4>
-					<a href="<spring:url value="/topic/${entry.topic.id}.html" />">
-						<c:out value="${entry.topic.title}" />
-					</a>
-				</h4>
+	<div id="div2">
+		<h3>Favorites</h3>
+		<c:forEach items="${favorites}" var="entry">
+			<a class="list-group-item" href="/entry/${entry.id}.html">
+				${entry.topic.title}</a>
+		</c:forEach>
 
-				<p>${entry.description}</p>
+	</div>
+	<div id="div3">
+		<h3>Latest Entries</h3>
+		<c:forEach items="${lastEntries}" var="entry">
+			<a class="list-group-item" href="/entry/${entry.id}.html">
+				${entry.topic.title}</a>
+		</c:forEach>
 
-				<div class="ratings">
-					<span class="pull-right"><b>${entry.user.name} </b>${entry.dateString}</span>
-
-				</div>
-				<br>
-			</div>
-
-		</div>
-	</c:forEach>
-
+	</div>
 </div>
 
 

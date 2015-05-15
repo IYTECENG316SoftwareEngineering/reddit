@@ -11,6 +11,11 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/WEB-INF/layout/../layout/taglib.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -41,6 +46,16 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
+      out.write('\n');
+      out.write("\r\n");
+      out.write("<!-- in order to avoid insert tag libs to each page -->\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("<!-- \tuser registration form -->\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t&copy; Özgür Can - Ender Tunç - Semih Orhan");

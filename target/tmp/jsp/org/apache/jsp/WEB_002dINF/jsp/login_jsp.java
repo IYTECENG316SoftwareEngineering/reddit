@@ -63,7 +63,9 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\r\n");
       out.write("\t\r\n");
       out.write("<!-- \tuser registration form -->\r\n");
-      out.write("\t");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("<style>\r\n");

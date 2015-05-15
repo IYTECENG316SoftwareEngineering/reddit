@@ -1,7 +1,9 @@
 com\codict\controller\LoginController.class
+com\codict\repository\PrivateMessageRepository.class
 com\codict\annotation\UniqueUsernameValidator.class
 com\codict\controller\EntryController.class
 com\codict\entity\Entry.class
+com\codict\controller\MessageController.class
 com\codict\controller\IndexController.class
 com\codict\entity\Topic.class
 com\codict\controller\RegisterController.class
@@ -9,12 +11,16 @@ com\codict\entity\Role.class
 com\codict\repository\RoleRepository.class
 com\codict\annotation\UniqueTopicTitleValidator.class
 com\codict\controller\TopicController.class
-com\codict\entity\formModal\NewTopic.class
 com\codict\service\CategoryService.class
+com\codict\service\MessageService.class
+com\codict\entity\PrivateMessage.class
 com\codict\repository\TopicRepository.class
 com\codict\entity\User.class
 com\codict\annotation\UniqueTopicTitle.class
+com\codict\entity\PrivateMessageConversation.class
+com\codict\helper\Settings.class
 com\codict\controller\UserController.class
+com\codict\repository\PrivateMessageConversationRepository.class
 com\codict\repository\EntryRepository.class
 com\codict\service\EntryService.class
 com\codict\service\UserService.class

@@ -21,8 +21,10 @@
 
 				<div class="ratings">
 					<a href="<spring:url value='/topic/${entry.topic.id}.html' />">${entry.topic.title}</a>
-					<span class="pull-right"><b>${entry.user.name} </b> <a
-						href="<spring:url value='/entry/${entry.id}.html' />">${entry.dateString}</a>
+					<span class="pull-right"><b> <a
+							href="<spring:url value="/profile/${entry.user.id}.html" />">
+								<c:out value="${entry.user.name}" />
+						</a></b> <a href="<spring:url value='/entry/${entry.id}.html' />">${entry.dateString}</a>
 					</span>
 				</div>
 				<br>

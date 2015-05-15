@@ -6,5 +6,7 @@
 		<class>com.codict.entity.Role</class>
 		<class>com.codict.entity.Topic</class>
 		<class>com.codict.entity.User</class>
+		<class>com.codict.entity.PrivateMessage</class>
+		<class>com.codict.entity.PrivateMessageConversation</class>
 	</persistence-unit>
 </persistence>

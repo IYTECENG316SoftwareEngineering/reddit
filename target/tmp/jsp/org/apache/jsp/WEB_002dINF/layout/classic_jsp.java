@@ -11,7 +11,14 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/WEB-INF/layout/../layout/taglib.jsp");
+  }
+
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sec_authentication_property_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_security_authorize_access;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -21,12 +28,16 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
+    _jspx_tagPool_sec_authentication_property_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_security_authorize_access = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_spring_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
+    _jspx_tagPool_sec_authentication_property_nobody.release();
     _jspx_tagPool_security_authorize_access.release();
+    _jspx_tagPool_c_url_value_nobody.release();
     _jspx_tagPool_spring_url_value_nobody.release();
   }
 
@@ -96,6 +107,18 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!-- in order to avoid insert tag libs to each page -->\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("<!-- \tuser registration form -->\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<title>");
       if (_jspx_meth_tiles_getAsString_0(_jspx_page_context))
         return;
@@ -122,69 +145,86 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<!-- from navbar example of bootstrap -->\r\n");
       out.write("\r\n");
       out.write("\t\t<!-- Static navbar -->\r\n");
-      out.write("\t\t<div class=\"navbar navbar-default\" role=\"navigation\">\r\n");
-      out.write("\t\t\t<div class=\"container-fluid\">\r\n");
-      out.write("\t\t\t\t<div class=\"navbar-header\">\r\n");
-      out.write("\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle collapsed\"\r\n");
-      out.write("\t\t\t\t\t\tdata-toggle=\"collapse\" data-target=\".navbar-collapse\">\r\n");
-      out.write("\t\t\t\t\t\t<span class=\"sr-only\">Toggle navigation</span> <span\r\n");
-      out.write("\t\t\t\t\t\t\tclass=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span\r\n");
-      out.write("\t\t\t\t\t\t\tclass=\"icon-bar\"></span>\r\n");
-      out.write("\t\t\t\t\t</button>\r\n");
-      out.write("\t\t\t\t\t<a class=\"navbar-brand\" href=\"");
-      if (_jspx_meth_spring_url_0(_jspx_page_context))
-        return;
-      out.write("\">CoDict</a>\r\n");
-      out.write("\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t<div class=\"navbar-collapse collapse\">\r\n");
-      out.write("\t\t\t\t\t<ul class=\"nav navbar-nav\">\r\n");
-      out.write("\t\t\t\t\t\t<li class=\"");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\t<nav class=\"navbar navbar-default\" role=\"navigation\">\r\n");
+      out.write("\t\t\t<div class=\"navbar-header\">\r\n");
+      out.write("\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\"\r\n");
+      out.write("\t\t\t\t\tdata-target=\"#bs-example-navbar-collapse-1\">\r\n");
+      out.write("\t\t\t\t\t<span class=\"sr-only\">Toggle navigation</span> <span\r\n");
+      out.write("\t\t\t\t\t\tclass=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span\r\n");
+      out.write("\t\t\t\t\t\tclass=\"icon-bar\"></span>\r\n");
+      out.write("\t\t\t\t</button>\r\n");
+      out.write("\t\t\t\t<a class=\"navbar-brand\" href=\"#\">CoDict</a>\r\n");
+      out.write("\t\t\t</div>\r\n");
+      out.write("\t\t\t<div class=\"collapse navbar-collapse\"\r\n");
+      out.write("\t\t\t\tid=\"bs-example-navbar-collapse-1\">\r\n");
+      out.write("\t\t\t\t<ul class=\"nav navbar-nav\">\r\n");
+      out.write("\t\t\t\t\t<li class=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'index' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a\r\n");
-      out.write("\t\t\t\t\t\t\thref='");
-      if (_jspx_meth_spring_url_1(_jspx_page_context))
+      out.write("\t\t\t\t\t\thref='");
+      if (_jspx_meth_spring_url_0(_jspx_page_context))
         return;
       out.write("'>Home</a></li>\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t<li class=\"dropdown\"><a href=\"#\" data-toggle=\"dropdown\"\r\n");
+      out.write("\t\t\t\t\t\tclass=\"dropdown-toggle\">Categories <b class=\"caret\"></b></a>\r\n");
+      out.write("\t\t\t\t\t\t<ul id=\"categoryList\" class=\"dropdown-menu\">\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t</ul></li>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t");
       if (_jspx_meth_security_authorize_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t\t");
       if (_jspx_meth_security_authorize_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t\t</ul>\r\n");
-      out.write("\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t</ul>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n");
+      out.write("\t\t\t\t\t");
       if (_jspx_meth_security_authorize_2(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t");
       if (_jspx_meth_security_authorize_3(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t\t</ul>\r\n");
+      out.write("\t\t\t\t</ul>\r\n");
+      out.write("\t\t\t\t<form class=\"navbar-form navbar-left\" role=\"search\"\r\n");
+      out.write("\t\t\t\t\taction=\"");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\" method=\"GET\">\r\n");
+      out.write("\t\t\t\t\t<div class=\"form-group\">\r\n");
+      out.write("\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Search\"\r\n");
+      out.write("\t\t\t\t\t\t\tname=criteria>\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default\">\r\n");
+      out.write("\t\t\t\t\t\t<i class=\"glyphicon glyphicon-search\"></i>\r\n");
+      out.write("\t\t\t\t\t</button>\r\n");
+      out.write("\t\t\t\t</form>\r\n");
       out.write("\r\n");
-      out.write("\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t<!--/.nav-collapse -->\r\n");
       out.write("\t\t\t</div>\r\n");
-      out.write("\t\t\t<!--/.container-fluid -->\r\n");
-      out.write("\t\t</div>\r\n");
+      out.write("\t\t</nav>\r\n");
+      out.write("\r\n");
       out.write("\t\t");
       if (_jspx_meth_tiles_insertAttribute_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t");
       if (_jspx_meth_tiles_insertAttribute_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\r\n");
       out.write("\t\t<br> <br>\r\n");
-      out.write("\r\n");
       out.write("\t\t<center>\r\n");
       out.write("\t\t\t");
       if (_jspx_meth_tiles_insertAttribute_2(_jspx_page_context))
@@ -193,6 +233,8 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</center>\r\n");
       out.write("\t</div>\r\n");
       out.write("</body>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -246,15 +288,51 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_security_authorize_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  security:authorize
+    org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_0 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
+    _jspx_th_security_authorize_0.setPageContext(_jspx_page_context);
+    _jspx_th_security_authorize_0.setParent(null);
+    _jspx_th_security_authorize_0.setAccess("hasRole('ROLE_ADMIN')");
+    int _jspx_eval_security_authorize_0 = _jspx_th_security_authorize_0.doStartTag();
+    if (_jspx_eval_security_authorize_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t<li class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'users' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a\r\n");
+      out.write("\t\t\t\t\t\t\thref=\"");
+      if (_jspx_meth_spring_url_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_0, _jspx_page_context))
+        return true;
+      out.write("\">Users</a></li>\r\n");
+      out.write("\t\t\t\t\t\t<li class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'topics' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a\r\n");
+      out.write("\t\t\t\t\t\t\thref=\"");
+      if (_jspx_meth_spring_url_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_0, _jspx_page_context))
+        return true;
+      out.write("\">Topics</a></li>\r\n");
+      out.write("\t\t\t\t\t");
+    }
+    if (_jspx_th_security_authorize_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_0);
+      return true;
+    }
+    _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_spring_url_1(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  spring:url
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_1 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_url_1.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_1.setParent(null);
-    _jspx_th_spring_url_1.setValue("/");
+    _jspx_th_spring_url_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_0);
+    _jspx_th_spring_url_1.setValue("/users.html");
     int[] _jspx_push_body_count_spring_url_1 = new int[] { 0 };
     try {
       int _jspx_eval_spring_url_1 = _jspx_th_spring_url_1.doStartTag();
@@ -272,35 +350,6 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_security_authorize_0(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  security:authorize
-    org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_0 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
-    _jspx_th_security_authorize_0.setPageContext(_jspx_page_context);
-    _jspx_th_security_authorize_0.setParent(null);
-    _jspx_th_security_authorize_0.setAccess("hasRole('ROLE_ADMIN')");
-    int _jspx_eval_security_authorize_0 = _jspx_th_security_authorize_0.doStartTag();
-    if (_jspx_eval_security_authorize_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      out.write("\r\n");
-      out.write("\t\t\t\t\t\t\t<li class=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'users' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><a\r\n");
-      out.write("\t\t\t\t\t\t\t\thref=\"");
-      if (_jspx_meth_spring_url_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_0, _jspx_page_context))
-        return true;
-      out.write("\">Users</a></li>\r\n");
-      out.write("\t\t\t\t\t\t");
-    }
-    if (_jspx_th_security_authorize_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_0);
-      return true;
-    }
-    _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_0);
-    return false;
-  }
-
   private boolean _jspx_meth_spring_url_2(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -309,7 +358,7 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_2 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_url_2.setPageContext(_jspx_page_context);
     _jspx_th_spring_url_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_0);
-    _jspx_th_spring_url_2.setValue("/users.html");
+    _jspx_th_spring_url_2.setValue("/topics.html");
     int[] _jspx_push_body_count_spring_url_2 = new int[] { 0 };
     try {
       int _jspx_eval_spring_url_2 = _jspx_th_spring_url_2.doStartTag();
@@ -339,14 +388,18 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_security_authorize_1 = _jspx_th_security_authorize_1.doStartTag();
     if (_jspx_eval_security_authorize_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       out.write("\r\n");
-      out.write("\t\t\t\t\t\t\t<li class=\"");
+      out.write("\t\t\t\t\t\t<li class=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'account' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a\r\n");
-      out.write("\t\t\t\t\t\t\t\thref=\"");
+      out.write("\t\t\t\t\t\t\thref=\"");
       if (_jspx_meth_spring_url_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_1, _jspx_page_context))
         return true;
-      out.write("\">My Account</a></li>\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write('"');
+      out.write('>');
+      if (_jspx_meth_sec_authentication_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_1, _jspx_page_context))
+        return true;
+      out.write("</a></li>\r\n");
+      out.write("\t\t\t\t\t");
     }
     if (_jspx_th_security_authorize_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_1);
@@ -382,6 +435,24 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_sec_authentication_0(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  sec:authentication
+    org.springframework.security.taglibs.authz.AuthenticationTag _jspx_th_sec_authentication_0 = (org.springframework.security.taglibs.authz.AuthenticationTag) _jspx_tagPool_sec_authentication_property_nobody.get(org.springframework.security.taglibs.authz.AuthenticationTag.class);
+    _jspx_th_sec_authentication_0.setPageContext(_jspx_page_context);
+    _jspx_th_sec_authentication_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_1);
+    _jspx_th_sec_authentication_0.setProperty("name");
+    int _jspx_eval_sec_authentication_0 = _jspx_th_sec_authentication_0.doStartTag();
+    if (_jspx_th_sec_authentication_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_sec_authentication_property_nobody.reuse(_jspx_th_sec_authentication_0);
+      return true;
+    }
+    _jspx_tagPool_sec_authentication_property_nobody.reuse(_jspx_th_sec_authentication_0);
+    return false;
+  }
+
   private boolean _jspx_meth_security_authorize_2(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -394,21 +465,21 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_security_authorize_2 = _jspx_th_security_authorize_2.doStartTag();
     if (_jspx_eval_security_authorize_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       out.write("\r\n");
-      out.write("\t\t\t\t\t\t\t<li class=\"");
+      out.write("\t\t\t\t\t\t<li class=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'register' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a\r\n");
-      out.write("\t\t\t\t\t\t\t\thref=\"");
+      out.write("\t\t\t\t\t\t\thref=\"");
       if (_jspx_meth_spring_url_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_2, _jspx_page_context))
         return true;
       out.write("\">Register</a></li>\r\n");
-      out.write("\t\t\t\t\t\t\t<li class=\"");
+      out.write("\t\t\t\t\t\t<li class=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'login' ?  'active' : '' }", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a\r\n");
-      out.write("\t\t\t\t\t\t\t\thref=\"");
+      out.write("\t\t\t\t\t\t\thref=\"");
       if (_jspx_meth_spring_url_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_2, _jspx_page_context))
         return true;
       out.write("\">Login</a></li>\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t\t");
     }
     if (_jspx_th_security_authorize_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_2);
@@ -482,11 +553,11 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_security_authorize_3 = _jspx_th_security_authorize_3.doStartTag();
     if (_jspx_eval_security_authorize_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       out.write("\r\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"");
+      out.write("\t\t\t\t\t\t<li><a href=\"");
       if (_jspx_meth_spring_url_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_3, _jspx_page_context))
         return true;
       out.write("\">Logout</a></li>\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t\t");
     }
     if (_jspx_th_security_authorize_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_3);
@@ -519,6 +590,24 @@ public final class classic_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_spring_url_6.doFinally();
       _jspx_tagPool_spring_url_value_nobody.reuse(_jspx_th_spring_url_6);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent(null);
+    _jspx_th_c_url_0.setValue("/result.html");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 

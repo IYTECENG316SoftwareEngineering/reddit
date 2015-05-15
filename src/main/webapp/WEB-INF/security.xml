@@ -13,11 +13,14 @@
 	<http use-expressions="true">
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/topics**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/topics/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/account/**" access="hasRole('ROLE_USER')" />
 		<!-- To combine your login page with security -->
 		<form-login login-page="/login.html" />
 		<logout logout-url="/logout" />
 	</http>
+
 
 	<!-- That is where we get users and their roles -->
 	<!-- Test autentication Manager -->

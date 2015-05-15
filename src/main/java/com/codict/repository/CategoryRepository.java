@@ -6,6 +6,6 @@ import com.codict.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
-	Category findByName(String category);
+	Category findByNameIgnoreCase(String Name);
 	
 }

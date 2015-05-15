@@ -2,6 +2,7 @@ package com.codict.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -25,16 +26,16 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private EntryRepository entryRepository;
-	
+
 	@Autowired
 	private TopicRepository topicRepository;
-	
+
 	@Autowired
 	private RoleRepository roleRepository;
-	
+
 	public List<User> findAll() {
 		return userRepository.findAll();
 	}
@@ -42,40 +43,64 @@ public class UserService {
 	public User findOne(int id) {
 		return userRepository.findOne(id);
 	}
-	
+
 	public User findOne(String name) {
 		return userRepository.findByName(name);
 	}
-	
+
 	@Transactional
 	public User findOneWithEntries(int id) {
 		User user = findOne(id);
-		List<Entry> entries =  entryRepository.findByUser(user, new PageRequest(0, 10, Direction.DESC, "publishedDate"));
+		List<Entry> entries = entryRepository.findByUser(user, new PageRequest(
+				0, 10, Direction.DESC, "publishedDate"));
 		user.setEntries(entries);
 		return user;
 	}
 
 	public User save(User user) {
-//		Before saving, set enabled and encode password
+		// Before saving, set enabled and encode password
 		user.setEnabled(true);
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		user.setPassword(encoder.encode(user.getPassword()));
-		
+
 		List<Role> roles = new ArrayList<Role>();
-//		Get role user as an object
+		// Get role user as an object
 		roles.add(roleRepository.findByName("ROLE_USER"));
 		user.setRoles(roles);
+
+		return userRepository.save(user);
+
+	}
+	
+	public User update(User user) {
+		// Before saving, set enabled and encode password
+
+		// Get role user as an object
 		
 		return userRepository.save(user);
-		
+
 	}
+	
+	
+	
 
 	public User findOneWithEntries(String name) {
 		User user = userRepository.findByName(name);
 		return findOneWithEntries(user.getId());
 	}
-	
+
 	public void delete(int id) {
-		userRepository.delete(id);	
+		userRepository.delete(id);
 	}
+
+	public User findOneWithFavorites(String name) {
+
+		User tempUser = userRepository.findByName(name);
+		Set<Entry> entries = entryRepository.findByUserFavorited(tempUser);
+		tempUser.setFavoriteEntries(entries);
+
+		return tempUser;
+	}
+
+
 }

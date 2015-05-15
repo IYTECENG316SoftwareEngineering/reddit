@@ -1,0 +1,22 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+	
+	
+	<cache name="podcasts" maxEntriesLocalHeap="1000" eternal="true"
+		memoryStoreEvictionPolicy="LRU" />
+</ehcache>
+
+
+
+<!-- <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
+<!-- xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"> -->
+
+<!-- <diskStore path="java.io.tmpdir" /> -->
+
+<!-- <cache name="podcasts" maxBytesLocalHeap="40M" eternal="false" -->
+<!-- timeToIdleSeconds="300" overflowToDisk="true" maxEntriesLocalDisk="1000" -->
+<!-- diskPersistent="false" diskExpiryThreadIntervalSeconds="120" -->
+<!-- memoryStoreEvictionPolicy="LRU" /> -->
+
+<!-- </ehcache> -->

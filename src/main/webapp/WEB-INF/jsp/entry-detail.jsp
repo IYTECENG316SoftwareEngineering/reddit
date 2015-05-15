@@ -12,7 +12,7 @@
 
 
 	<div class="text-left">
-		<h3>${entry.topic.title}</h3>
+		<h3 > <a href="<spring:url value="/topic/${entry.topic.id}.html" />"> ${entry.topic.title} </a></h3>
 	</div>
 
 

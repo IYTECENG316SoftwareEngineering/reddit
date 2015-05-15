@@ -5,3 +5,6 @@
 	<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!-- 	user registration form -->
 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+	<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+	
